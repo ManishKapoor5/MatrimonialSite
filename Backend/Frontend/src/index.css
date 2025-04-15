@@ -1,0 +1,124 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+:root {
+    --background: 10 80% 97%; /* Soft pastel pink */
+    --foreground: 330 50% 20%; /* Deep maroon */
+    --card: 10 60% 95%; /* Warm peach */
+    --card-foreground: 330 50% 25%; /* Rich wine red */
+    --popover: 10 60% 97%; /* Soft blush */
+    --popover-foreground: 330 50% 25%; /* Deep wine red */
+    --primary: 350 80% 50%; /* Classic wedding red */
+    --primary-foreground: 10 80% 98%; /* Soft ivory */
+    --secondary: 30 70% 85%; /* Warm gold */
+    --secondary-foreground: 330 50% 25%; /* Deep maroon */
+    --muted: 30 50% 90%; /* Champagne beige */
+    --muted-foreground: 330 50% 35%; /* Soft brown */
+    --accent: 40 70% 75%; /* Peachy gold */
+    --accent-foreground: 330 50% 25%; /* Deep wine */
+    --destructive: 0 70% 45%; /* Deep red */
+    --destructive-foreground: 10 80% 98%; /* Soft ivory */
+    --border: 30 50% 75%; /* Muted gold */
+    --input: 30 50% 80%; /* Light champagne */
+    --ring: 350 70% 65%; /* Warm coral red */
+    --radius: 0.75rem;
+}
+
+
+  .dark {
+    --background: 10 80% 97%; /* Soft pastel pink */
+    --foreground: 330 50% 20%; /* Deep maroon */
+    --card: 10 60% 95%; /* Warm peach */
+    --card-foreground: 330 50% 25%; /* Rich wine red */
+    --popover: 10 60% 97%; /* Soft blush */
+    --popover-foreground: 330 50% 25%; /* Deep wine red */
+    --primary: 350 80% 50%; /* Classic wedding red */
+    --primary-foreground: 10 80% 98%; /* Soft ivory */
+    --secondary: 30 70% 85%; /* Warm gold */
+    --secondary-foreground: 330 50% 25%; /* Deep maroon */
+    --muted: 30 50% 90%; /* Champagne beige */
+    --muted-foreground: 330 50% 35%; /* Soft brown */
+    --accent: 40 70% 75%; /* Peachy gold */
+    --accent-foreground: 330 50% 25%; /* Deep wine */
+    --destructive: 0 70% 45%; /* Deep red */
+    --destructive-foreground: 10 80% 98%; /* Soft ivory */
+    --border: 30 50% 75%; /* Muted gold */
+    --input: 30 50% 80%; /* Light champagne */
+    --ring: 350 70% 65%; /* Warm coral red */
+}
+
+
+}
+
+@layer base {
+  * {
+    @apply border-border antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Glass Effect Classes */
+  .glass {
+    @apply bg-white/75 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+
+  .glass-dark {
+    @apply bg-black/30 backdrop-blur-md border border-white/10 shadow-md;
+  }
+
+  /* Animation classes */
+  .page-transition-enter {
+    @apply opacity-0;
+  }
+  
+  .page-transition-enter-active {
+    @apply opacity-100 transition-opacity duration-300;
+  }
+  
+  .page-transition-exit {
+    @apply opacity-100;
+  }
+  
+  .page-transition-exit-active {
+    @apply opacity-0 transition-opacity duration-300;
+  }
+}
+
+/* Focus styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-primary/80 ring-offset-2;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  @apply h-5 w-5 animate-spin rounded-full border-2 border-primary border-t-transparent;
+}
+
+/* Card hover effect */
+.card-hover {
+  @apply transition-all duration-300 hover:translate-y-[-2px] hover:shadow-md;
+}
