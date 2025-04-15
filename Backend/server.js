@@ -23,6 +23,7 @@ import authRoutes from "./middleware/authRoutes.js";
 import fileupload from "express-fileupload";
 import { Server } from 'socket.io';
 
+const filePath = process.argv[2] || path.join(process.cwd(), 'client', 'dist', 'index.html');
 // Setup
 dotenv.config();
 const app = express();
